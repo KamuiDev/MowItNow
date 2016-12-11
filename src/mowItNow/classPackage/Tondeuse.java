@@ -32,8 +32,12 @@ public class Tondeuse {
 		return this.ordonneeY--;
 	}
 	
+	public char getFirstOrientation(char orientation) {
+		return orientationTondeuse = orientation;
+	}
+	
 	// Méthodes publiques
-	public void changerOrientation(char orientationTondeuse, char directionTondeuse) {
+	public void changerOrientation(char directionTondeuse) {
 
 			switch(orientationTondeuse) {
 				case 'E':
@@ -90,8 +94,7 @@ public class Tondeuse {
 				
 				default: 
 					System.out.println("mauvaise Lettre");
-				break;
-			
+				break;		
 			}
 				
 	}

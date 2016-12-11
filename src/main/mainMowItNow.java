@@ -9,7 +9,7 @@ public class mainMowItNow {
 		int longueurGrille = 5;
 		int abscisseX = 1;
 		int ordonneeY = 2;
-		String directionString = "AAAG";
+		String directionString = "AAAGD";
 		char orientation = 'N';
 		
 		Grille grilleTest = new Grille(longueurGrille, largeurGrille);
@@ -19,8 +19,10 @@ public class mainMowItNow {
 			
 			Tondeuse tondeuseTest = new Tondeuse(abscisseX, ordonneeY, orientation);
 			
+			tondeuseTest.getFirstOrientation(orientation);
+			
 			for (int caractereDirection = 0; caractereDirection < directionString.length(); caractereDirection++) {
-				tondeuseTest.changerOrientation(orientation, directionString.charAt(caractereDirection));
+				tondeuseTest.changerOrientation(directionString.charAt(caractereDirection));
 			}
 			tondeuseTest.afficherResultat();
 			System.out.println(directionString);
