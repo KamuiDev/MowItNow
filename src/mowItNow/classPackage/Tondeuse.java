@@ -39,8 +39,6 @@ public class Tondeuse {
 	// Méthodes publiques
 	public void changerOrientation(char orientationTondeuse, char directionTondeuse) {
 
-		if(orientationTondeuse == 'N' || orientationTondeuse == 'S' || orientationTondeuse == 'E'
-		   || orientationTondeuse == 'O') {
 			switch(orientationTondeuse) {
 				case 'E':
 					if(directionTondeuse == 'G') {
@@ -81,7 +79,7 @@ public class Tondeuse {
 					}
 				break;
 				
-				default :
+				case 'S' :
 					if(directionTondeuse == 'G') {
 						abscisseX = avancerTondeuseX(abscisseX);
 						orientationTondeuse = orientation('E');
@@ -93,11 +91,12 @@ public class Tondeuse {
 						orientationTondeuse = orientation('S');
 					}
 				break;
-			
+				
+				default: 
+					System.out.println("mauvaise Lettre");
+				break;
 			}
-		} else {
-			System.out.println("Mauvaise lettre");
-		}
+			
 	}
 	
 	public void afficherOrientation() {
