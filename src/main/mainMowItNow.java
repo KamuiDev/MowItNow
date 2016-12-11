@@ -9,8 +9,8 @@ public class mainMowItNow {
 		int longueurGrille = 5;
 		int abscisseX = 1;
 		int ordonneeY = 2;
-		String directionString = "AAA";
-		char orientation = 'E';
+		String directionString = "AAAG";
+		char orientation = 'N';
 		
 		Grille grilleTest = new Grille(longueurGrille, largeurGrille);
 		grilleTest.afficherTailleGrille();
@@ -22,7 +22,9 @@ public class mainMowItNow {
 			for (int caractereDirection = 0; caractereDirection < directionString.length(); caractereDirection++) {
 				tondeuseTest.changerOrientation(orientation, directionString.charAt(caractereDirection));
 			}
-							
+			tondeuseTest.afficherResultat();
+			System.out.println(directionString);
+					
 		} else {
 			System.out.println("Vous avez choisi des coordonnées n'appartenant pas à la grille");
 		}

@@ -93,9 +93,11 @@ public class Tondeuse {
 				break;
 			
 			}
-			
-			System.out.println(abscisseX + " " + ordonneeY + " " + orientationTondeuse);
 				
+	}
+	
+	public void afficherResultat() {
+		System.out.println(abscisseX + " " + ordonneeY + " " + orientationTondeuse);
 	}
 	
 	
