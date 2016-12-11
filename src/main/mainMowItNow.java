@@ -9,27 +9,22 @@ public class mainMowItNow {
 		int longueurGrille = 5;
 		int abscisseX = 1;
 		int ordonneeY = 2;
-		char direction = 'G';
-		char orientation = 'N';
+		String directionString = "AAA";
+		char orientation = 'E';
 		
 		Grille grilleTest = new Grille(longueurGrille, largeurGrille);
-		grilleTest.afficherLargeurGrille();
-		grilleTest.afficherLongueurGrille();
+		grilleTest.afficherTailleGrille();
 		
 		if(grilleTest.getLongueurGrille() >= abscisseX && grilleTest.getLargeurGrille() >= ordonneeY) {
 			
-		Tondeuse tondeuseTest = new Tondeuse(abscisseX, ordonneeY, orientation);
-		tondeuseTest.changerOrientation(orientation, direction);
-		tondeuseTest.afficherCoordonneeX();
-		System.out.println("");
-		tondeuseTest.afficherCoordonneeY();
-		System.out.println("");
-		tondeuseTest.afficherOrientation();
-		System.out.println("");
-		
+			Tondeuse tondeuseTest = new Tondeuse(abscisseX, ordonneeY, orientation);
 			
+			for (int caractereDirection = 0; caractereDirection < directionString.length(); caractereDirection++) {
+				tondeuseTest.changerOrientation(orientation, directionString.charAt(caractereDirection));
+			}
+							
 		} else {
-			System.out.println("Vous avez choisit des coordonnées n'appartenant pas à la grille");
+			System.out.println("Vous avez choisi des coordonnées n'appartenant pas à la grille");
 		}
 		
 		

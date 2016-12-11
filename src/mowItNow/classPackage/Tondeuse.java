@@ -16,24 +16,20 @@ public class Tondeuse {
 		
 	}	
 	// Méthodes privées
-	public int avancerTondeuseX(int abscisseX) {
+	private int avancerTondeuseX(int abscisseX) {
 		return this.abscisseX++;
 	}
 	
-	public int avancerTondeuseY(int ordonneeY) {
+	private int avancerTondeuseY(int ordonneeY) {
 		return this.ordonneeY++;
 	}
 	
-	public int reculerTondeuseX(int abscisseX) {
+	private int reculerTondeuseX(int abscisseX) {
 		return this.abscisseX--;
 	}
 	
-	public int reculerTondeuseY(int ordonneeY) {
+	private int reculerTondeuseY(int ordonneeY) {
 		return this.ordonneeY--;
-	}
-	
-	public char orientation(char orientationTondeuse) {
-		return this.orientationTondeuse;
 	}
 	
 	// Méthodes publiques
@@ -42,76 +38,65 @@ public class Tondeuse {
 			switch(orientationTondeuse) {
 				case 'E':
 					if(directionTondeuse == 'G') {
-						ordonneeY = avancerTondeuseY(ordonneeY);
-						orientationTondeuse = orientation('N');
+						avancerTondeuseY(ordonneeY);
+						orientationTondeuse = 'N';
 					} else if(directionTondeuse == 'D') {
-						ordonneeY = reculerTondeuseY(ordonneeY);
-						orientationTondeuse = orientation('S');
+						reculerTondeuseY(ordonneeY);
+						orientationTondeuse = 'S';
 					} else {
-						abscisseX = avancerTondeuseX(abscisseX);
-						orientationTondeuse = orientation('E');
+						avancerTondeuseX(abscisseX);
+						orientationTondeuse = 'E';
 					}
 				break;
 				
 				case 'O' :
 					if(directionTondeuse == 'G') {
-						ordonneeY = reculerTondeuseY(ordonneeY);
-						orientationTondeuse = orientation('S');
+						reculerTondeuseY(ordonneeY);
+						orientationTondeuse = 'S';
 					} else if(directionTondeuse == 'D') {
-						ordonneeY = avancerTondeuseY(ordonneeY);
-						orientationTondeuse = orientation('N');
+						avancerTondeuseY(ordonneeY);
+						orientationTondeuse = 'N';
 					} else {
-						abscisseX = reculerTondeuseX(abscisseX);
-						orientationTondeuse = orientation('O');
+						reculerTondeuseX(abscisseX);
+						orientationTondeuse = 'O';
 					}
 				break;
 				
 				case 'N' :
 					if(directionTondeuse == 'G') {
-						this.abscisseX = reculerTondeuseX(this.abscisseX);
-						orientationTondeuse = orientation('O');
+						reculerTondeuseX(abscisseX);
+						orientationTondeuse = 'O';
 					} else if(directionTondeuse == 'D') {
-						abscisseX = avancerTondeuseX(abscisseX);
-						orientationTondeuse = orientation('E');
+						avancerTondeuseX(abscisseX);
+						orientationTondeuse = 'E';
 					} else {
-						ordonneeY = avancerTondeuseY(ordonneeY);
-						orientationTondeuse = orientation('N');
+						avancerTondeuseY(ordonneeY);
+						orientationTondeuse = 'N';
 					}
 				break;
 				
 				case 'S' :
 					if(directionTondeuse == 'G') {
-						abscisseX = avancerTondeuseX(abscisseX);
-						orientationTondeuse = orientation('E');
+						avancerTondeuseX(abscisseX);
+						orientationTondeuse = 'E';
 					} else if(directionTondeuse == 'D') {
-						abscisseX = reculerTondeuseX(abscisseX);
-						orientationTondeuse = orientation('O');
+						reculerTondeuseX(abscisseX);
+						orientationTondeuse = 'O';
 					} else {
-						ordonneeY = reculerTondeuseY(ordonneeY);
-						orientationTondeuse = orientation('S');
+						reculerTondeuseY(ordonneeY);
+						orientationTondeuse = 'S';
 					}
 				break;
 				
 				default: 
 					System.out.println("mauvaise Lettre");
 				break;
+			
 			}
 			
+			System.out.println(abscisseX + " " + ordonneeY + " " + orientationTondeuse);
+				
 	}
 	
-	public void afficherOrientation() {
-		char orientationFinale = this.orientationTondeuse;
-		System.out.println(orientationFinale);
-	}
-	
-	public void afficherCoordonneeX() {
-		int coordonneeXFinale = this.abscisseX;
-		System.out.println(coordonneeXFinale);
-	}
-	
-	public void afficherCoordonneeY() {
-		int coordonneeYFinale = this.ordonneeY;
-		System.out.println(coordonneeYFinale);
-	}
 	
 }

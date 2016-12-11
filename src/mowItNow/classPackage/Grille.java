@@ -18,12 +18,8 @@ public class Grille {
 		return this.largeurY;
 	}
 	
-	public void afficherLongueurGrille() {
-		System.out.println(longueurX);
-	}
-	
-	public void afficherLargeurGrille() {
-		System.out.println(largeurY);
+	public void afficherTailleGrille() {
+		System.out.println(longueurX + " " + largeurY);
 	}
 	
 }
