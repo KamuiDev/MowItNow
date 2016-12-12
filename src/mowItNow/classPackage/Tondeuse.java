@@ -103,5 +103,4 @@ public class Tondeuse {
 		System.out.println(abscisseX + " " + ordonneeY + " " + orientationTondeuse);
 	}
 	
-	
 }
