@@ -5,12 +5,12 @@ import mowItNow.classPackage.*;
 public class mainMowItNow {
 	public static void main(String[] args) {
 		
-		int largeurGrille = 5;
-		int longueurGrille = 5;
-		int abscisseX = 1;
-		int ordonneeY = 2;
-		String directionString = "AAAGA";
-		char orientation = 'E';
+		int largeurGrille = Integer.parseInt(args[0]);
+		int longueurGrille = Integer.parseInt(args[1]);
+		int abscisseX = Integer.parseInt(args[2]);
+		int ordonneeY = Integer.parseInt(args[3]);
+		char orientation = args[4].charAt(0);
+		String directionString = args[5];
 		
 		Grille grilleTest = new Grille(longueurGrille, largeurGrille);
 		grilleTest.afficherTailleGrille();
